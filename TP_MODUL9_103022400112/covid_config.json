@@ -1,0 +1,6 @@
+{
+  "satuan_suhu": "config1.json",
+  "batas_hari_deman": "config2.json",
+  "pesan_ditolak": "config3.json",
+  "pesan_diterima": "config4.json"
+}
