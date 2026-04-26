@@ -11,21 +11,21 @@ class Program
         Console.WriteLine($"Berapa suhu badan anda saat ini? Dalam nilai {config.satuan_suhu}");
         double suhu = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("Berapa hari yang lalu (perkiraan) anda terakhir memiliki gejala deman? ");
-        int hariDemam = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Berapa hari yang lalu (perkiraan) anda terakhir memiliki gejala deman?");
+        int hari = Convert.ToInt32(Console.ReadLine());
 
-        bool suhuSesuai = true;
+        bool suhuValid = false;
 
         if (config.satuan_suhu == "celcius")
         {
-            suhuSesuai = (suhu >= 36.5 && suhu <= 37.5);
+            suhuValid = suhu >= 36.5 && suhu <= 37.5;
         }
         else if (config.satuan_suhu == "fahrenheit")
         {
-            suhuSesuai = (suhu >= 97.7 && suhu <= 99.5);
+            suhuValid = suhu >= 97.7 && suhu <= 99.5;
         }
 
-        if (suhuSesuai && hariDemam < config.batas_hari_demam)
+        if (suhuValid && hari < config.batas_hari_deman)
         {
             Console.WriteLine(config.pesan_diterima);
         }
